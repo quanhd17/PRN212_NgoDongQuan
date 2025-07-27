@@ -1,0 +1,43 @@
+<Window x:Class="NgoDongQuan_a2.RoomDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Room" Height="350" Width="400" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Room Number:" Grid.Row="0" Grid.Column="0" Margin="0,0,5,5"/>
+        <TextBox Text="{Binding Room.RoomNumber}" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <TextBlock Text="Description:" Grid.Row="1" Grid.Column="0" Margin="0,0,5,5"/>
+        <TextBox Text="{Binding Room.RoomDetailDescription}" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <TextBlock Text="Max Capacity:" Grid.Row="2" Grid.Column="0" Margin="0,0,5,5"/>
+        <TextBox Text="{Binding Room.RoomMaxCapacity}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <TextBlock Text="Room Type ID:" Grid.Row="3" Grid.Column="0" Margin="0,0,5,5"/>
+        <TextBox Text="{Binding Room.RoomTypeId}" Grid.Row="3" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <TextBlock Text="Status:" Grid.Row="4" Grid.Column="0" Margin="0,0,5,5"/>
+        <TextBox Text="{Binding Room.RoomStatus}" Grid.Row="4" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <TextBlock Text="Price/Day:" Grid.Row="5" Grid.Column="0" Margin="0,0,5,5"/>
+        <TextBox Text="{Binding Room.RoomPricePerDay}" Grid.Row="5" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="OK" Width="75" Margin="0,0,5,0" IsDefault="True" Click="Ok_Click"/>
+            <Button Content="Cancel" Width="75" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window> 

@@ -1,0 +1,31 @@
+<Window x:Class="NgoDongQuan_a2.BookRoomDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Book Room" Height="300" Width="400" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Start Date:" Grid.Row="0" Grid.Column="0" Margin="0,0,5,5"/>
+        <DatePicker SelectedDate="{Binding StartDate}" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <TextBlock Text="End Date:" Grid.Row="1" Grid.Column="0" Margin="0,0,5,5"/>
+        <DatePicker SelectedDate="{Binding EndDate}" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <TextBlock Text="Room:" Grid.Row="2" Grid.Column="0" Margin="0,0,5,5"/>
+        <ComboBox ItemsSource="{Binding AvailableRooms}" DisplayMemberPath="RoomNumber" SelectedItem="{Binding SelectedRoom}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,5"/>
+
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Book" Width="75" Margin="0,0,5,0" IsDefault="True" Click="Book_Click"/>
+            <Button Content="Cancel" Width="75" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window> 
